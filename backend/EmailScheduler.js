@@ -51,26 +51,26 @@ cron.schedule("* * * * *", async () => {
 
 });
 console.log("Email scheduler started");
-cron.schedule("* * * * *", async () => {
-    const now = new Date(now.getTime() + 5.5 * 60 * 60 * 1000)
-    console.log("Time to delete tasks:", now);
+// cron.schedule("* * * * *", async () => {
+//     const now = new Date(now.getTime() + 5.5 * 60 * 60 * 1000)
+//     console.log("Time to delete tasks:", now);
   
-    const tasksDueNow = await Tasks.find({
-      date: new Date(now.toISOString().split("T")[0]),
-      time: {
-        lte: now.toISOString().split("T")[1].slice(0, 5),
-      }
-    });
+//     const tasksDueNow = await Tasks.find({
+//       date: new Date(now.toISOString().split("T")[0]),
+//       time: {
+//         lte: now.toISOString().split("T")[1].slice(0, 5),
+//       }
+//     });
     
-    console.log("to be deleted, ", tasksDueNow)
-    tasksDueNow.forEach(async (task) => {
-      try {
-        await Tasks.findByIdAndDelete(task._id);
-        console.log(`Task '${task.task_name}' deleted.`);
-      } catch (error) {
-        console.error(`Error deleting task '${task.task_name}':`, error);
-      }
-    });
-  });
+//     console.log("to be deleted, ", tasksDueNow)
+//     tasksDueNow.forEach(async (task) => {
+//       try {
+//         await Tasks.findByIdAndDelete(task._id);
+//         console.log(`Task '${task.task_name}' deleted.`);
+//       } catch (error) {
+//         console.error(`Error deleting task '${task.task_name}':`, error);
+//       }
+//     });
+//   });
   
-  console.log("Task deletion scheduler started");
+//   console.log("Task deletion scheduler started");

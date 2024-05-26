@@ -40,9 +40,6 @@ const Header = () => {
         <Link to="about" className="block py-2 px-3 text-white rounded hover:text-gray-800 md:p-0">About</Link>
       </li>
       <li>
-        <Link to="login" className="block py-2 px-3 text-white rounded hover:text-gray-800 md:p-0">Services</Link>
-      </li>
-      <li>
         <Link to="contact" className="block py-2 px-3 text-white rounded hover:text-gray-800 md:p-0">Contact</Link>
       </li>
     </ul>

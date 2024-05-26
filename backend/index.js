@@ -3,7 +3,7 @@ const app = express();
 const port = 4000;
 const cors = require("cors");
 require('./EmailScheduler');
-
+require('./DeletingOldTasks')
 app.use(cors());
 const mongo = require("./db");
 mongo();

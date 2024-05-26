@@ -8,6 +8,8 @@ import { Signup } from './Pages/Signup';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './Context/AuthContext';
+import { About } from './Pages/About';
+import Contact from './Pages/Contact';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>
   </div>
